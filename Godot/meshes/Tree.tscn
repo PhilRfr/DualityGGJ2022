@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/meshes/cross.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[node name="Tree" type="MeshInstance"]
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="Spatial" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 3 )

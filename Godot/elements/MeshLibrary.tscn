@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://meshes/Rock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://meshes/Tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/textures/tree.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 3 )
+
+[node name="MeshLibrary" type="Spatial"]
+
+[node name="Rock" parent="." instance=ExtResource( 1 )]
+visible = false
+skeleton = NodePath("")
+
+[node name="Tree2" parent="." instance=ExtResource( 2 )]
+material/0 = SubResource( 1 )
